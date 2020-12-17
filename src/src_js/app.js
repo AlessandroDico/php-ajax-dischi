@@ -11,7 +11,7 @@ $(document).ready(function(){
     // chiamata ajax
     $.ajax({
         // url: "../forAjaXIndex/index.php",
-        url: "index.php",
+        url: "disc.php",
         method: "GET",
         success: function(data) {
             console.log('ok');
