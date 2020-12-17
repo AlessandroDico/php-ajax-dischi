@@ -13,73 +13,23 @@ include 'dischi.php';
         <header>
             Dicology
         </header>
-        <div class="container">
-            <div class="card-container">
-                <div class="box-card">
-                    <div class="card-image-container">
-                        <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="">
+        <main>
+            <div class="container">
+                <div class="card-container">
+                    <?php foreach ($dischi as $disco) { ?>
+                    <div class="box-card">
+                        <div class="card-image-container">
+                            <img src="<?php echo $disco['poster'];?>" alt="<?php echo $disco['title'];?>">
+                        </div>
+                        <p><?php echo $disco['title'];?></p>
+                        <p><?php echo $disco['author'];?></p>
+                        <p><?php echo $disco['year'];?></p>
                     </div>
-                    <p>Titolo</p>
-                    <p>Autore</p>
-                    <p>Anno</p>
-                </div>
-                <div class="box-card">
-                    <div class="card-image-container">
-                        <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="">
-                    </div>
-                    <p>Titolo</p>
-                    <p>Autore</p>
-                    <p>Anno</p>
-                </div>
-                <div class="box-card">
-                    <div class="card-image-container">
-                        <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="">
-                    </div>
-                    <p>Titolo</p>
-                    <p>Autore</p>
-                    <p>Anno</p>
-                </div>
-                <div class="box-card">
-                    <div class="card-image-container">
-                        <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="">
-                    </div>
-                    <p>Titolo</p>
-                    <p>Autore</p>
-                    <p>Anno</p>
-                </div>
-                <div class="box-card">
-                    <div class="card-image-container">
-                        <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="">
-                    </div>
-                    <p>Titolo</p>
-                    <p>Autore</p>
-                    <p>Anno</p>
-                </div>
-                <div class="box-card">
-                    <div class="card-image-container">
-                        <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="">
-                    </div>
-                    <p>Titolo</p>
-                    <p>Autore</p>
-                    <p>Anno</p>
-                </div>
-                <div class="box-card">
-                    <div class="card-image-container">
-                        <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="">
-                    </div>
-                    <p>Titolo</p>
-                    <p>Autore</p>
-                    <p>Anno</p>
-                </div>
-                <div class="box-card">
-                    <div class="card-image-container">
-                        <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="">
-                    </div>
-                    <p>Titolo</p>
-                    <p>Autore</p>
-                    <p>Anno</p>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
-        </div>
+        </main>
     </body>
 </html>
