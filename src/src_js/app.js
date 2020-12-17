@@ -1,6 +1,8 @@
 $(document).ready(function(){
     console.log('ciao');
 
+    const Handlebars = require("handlebars");
+
     var source = $("#entry-template").html();
 
     //questa var template è una funzione
