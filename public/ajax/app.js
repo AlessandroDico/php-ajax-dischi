@@ -102,7 +102,7 @@ $(document).ready(function () {
     // url: "../forAjaXIndex/index.php",
     url: "index.php",
     method: "GET",
-    succes: function succes(data) {
+    success: function success(data) {
       console.log('ok');
       console.log(data);
     },

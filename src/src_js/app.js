@@ -9,7 +9,7 @@ $(document).ready(function(){
         // url: "../forAjaXIndex/index.php",
         url: "index.php",
         method: "GET",
-        succes: function(data) {
+        success: function(data) {
             console.log('ok');
             console.log(data);
         },
