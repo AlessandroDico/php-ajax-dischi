@@ -1,0 +1,22 @@
+header {
+    height: 80px;
+    background: $mainColor;
+    color: green;
+    @include displayFlex(row, flex-start, center);
+    
+    h1 {
+        color: $logoColor;
+        margin-left: 20px;
+    }
+}
+
+.logo-container {
+    width: 50px;
+    margin-left: 20px;
+
+    img {
+        width: 100%;
+        display: block;
+    }
+
+}
