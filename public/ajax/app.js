@@ -5213,7 +5213,7 @@ $(document).ready(function () {
   var template = Handlebars.compile(source); // chiamata ajax
 
   $.ajax({
-    // url: "../forAjaXIndex/index.php",
+    // url: "../forAjaXIndex/disc.php",
     url: "disc.php",
     method: "GET",
     success: function success(data) {
