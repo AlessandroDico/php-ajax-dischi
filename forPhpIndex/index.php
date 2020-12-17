@@ -8,10 +8,18 @@ include 'dischi.php';
         <meta charset="utf-8">
         <title>Dischi con Php</title>
         <link rel="stylesheet" href="../public/php/app.css">
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
-            Dicology
+            <div class="logo-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/Spotify.png" alt="">
+            </div>
+            <h1>
+                DiscoDisco
+            </h1>
         </header>
         <main>
             <div class="container">
