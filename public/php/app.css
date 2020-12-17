@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 972px;
+  padding: 0 20px;
+  margin: auto;
+}
+
+header {
+  height: 80px;
+  background: #3c4033;
+  color: green;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 50px 0;
+}
+
+.box-card {
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  background: red;
+}
+
+.box-card .card-image-container img {
+  display: block;
+  width: 100%;
+}
+

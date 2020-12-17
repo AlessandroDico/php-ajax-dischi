@@ -1,0 +1,25 @@
+header {
+    height: 80px;
+    background: $mainColor;
+    color: green;
+}
+
+.card-container {
+    @include displayFlex(row, center, center);
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+.box-card {
+    max-width: 200px;
+    @include displayFlex(column, center, center);
+    padding: 10px;
+    margin: 10px;
+    background: red;
+
+    .card-image-container {
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+}
