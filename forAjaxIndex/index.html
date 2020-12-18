@@ -24,10 +24,10 @@
             <div class="container">
                 <select class="genre-select">
                     <option value="">All Genres</option>
-                    <option value="Rock">Rock</option>
+                    <!-- <option value="Rock">Rock</option>
                     <option value="Pop">Pop</option>
                     <option value="Jazz">Jazz</option>
-                    <option value="Metal">Metal</option>
+                    <option value="Metal">Metal</option> -->
                 </select>
                 <div class="card-container">
 
@@ -43,6 +43,9 @@
                     <p>{{autore}}</p>
                     <p>{{anno}}</p>
                 </div>
+        </script>
+        <script id="select-template" type="text/x-handlebars-template">
+            <option value="{{genre}}">{{genre}}</option>
         </script>
         <script src="../public/ajax/app.js" charset="utf-8"></script>
     </body>

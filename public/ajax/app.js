@@ -5209,7 +5209,10 @@ $(document).ready(function () {
 
   var source = $("#entry-template").html(); //questa var template è una funzione
 
-  var template = Handlebars.compile(source); // chiamata ajax
+  var template = Handlebars.compile(source); //template per le select / options 
+
+  var secondSource = $("#select-template").html();
+  var secondTemplate = Handlebars.compile(secondSource); // chiamata ajax
   //questa prima chiamata dev'essere disponibile solo per il file index.html in quanto il file index.php è già popolato quando si apre la pagina.. un modo comodo e veloce è quello di dare in id al body dell'html per esempio e giocare sulla sua length (che index.php ovviamente non ha)
 
   if ($('#html-body').length) {
@@ -5220,6 +5223,7 @@ $(document).ready(function () {
       success: function success(data) {
         // console.log('ok');
         // console.log(data);
+        var genreArray = [];
         data.forEach(function (item, i) {
           // console.log(item.title);
           // console.log(item.author);
@@ -5235,6 +5239,19 @@ $(document).ready(function () {
           var html = template(context); //appendiamo in pagina il template modificato
 
           $('.card-container').append(html);
+
+          if (!genreArray.includes(item.genre)) {
+            genreArray.push(item.genre);
+          }
+        }); // console.log(genreArray);
+
+        genreArray.forEach(function (item, i) {
+          var selectContext = {
+            genre: item
+          }; //ora gli diciamo di crearci l'html con le chiavi sostitute dal loro valore
+
+          var selectHtml = secondTemplate(selectContext);
+          $('.genre-select').append(selectHtml);
         });
       },
       error: function error() {
