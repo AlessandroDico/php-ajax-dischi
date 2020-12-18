@@ -9,38 +9,41 @@ $(document).ready(function(){
     var template = Handlebars.compile(source);
 
     // chiamata ajax
-    $.ajax({
-        // url: "../forAjaXIndex/disc.php",
-        url: "../forAllDisc.php",
-        method: "GET",
-        success: function(data) {
-            // console.log('ok');
-            // console.log(data);
+//questa prima chiamata dev'essere disponibile solo per il file index.html in quanto il file index.php è già popolato quando si apre la pagina.. un modo comodo e veloce è quello di dare in id al body dell'html per esempio e giocare sulla sua length (che index.php ovviamente non ha)
+    if ($('#html-body').length) {
+        $.ajax({
+            // url: "../forAjaXIndex/disc.php",
+            url: "../forAllDisc.php",
+            method: "GET",
+            success: function(data) {
+                // console.log('ok');
+                // console.log(data);
 
-            data.forEach((item, i) => {
-                // console.log(item.title);
-                // console.log(item.author);
-                // console.log(item.year);
+                data.forEach((item, i) => {
+                    // console.log(item.title);
+                    // console.log(item.author);
+                    // console.log(item.year);
 
-//ora assegnamo alle chiavi che sono nel template dell'html {{chive}} il valore corrispondente e li salviamo in una variabile
-                var context = {
-                    poster: item.poster,
-                    titolo: item.title,
-                    autore: item.author,
-                    anno: item.year
-                };
-                //ora gli diciamo di crearci l'html con le chiavi sostitute dal loro valore
-                var html = template(context);
+                    //ora assegnamo alle chiavi che sono nel template dell'html {{chive}} il valore corrispondente e li salviamo in una variabile
+                    var context = {
+                        poster: item.poster,
+                        titolo: item.title,
+                        autore: item.author,
+                        anno: item.year
+                    };
+                    //ora gli diciamo di crearci l'html con le chiavi sostitute dal loro valore
+                    var html = template(context);
 
-                //appendiamo in pagina il template modificato
-                $('.card-container').append(html);
-            });
+                    //appendiamo in pagina il template modificato
+                    $('.card-container').append(html);
+                });
 
-        },
-        error: function() {
-            console.log('errore');
-        }
-    })
+            },
+            error: function() {
+                console.log('errore');
+            }
+        })
+    }
 
 
     // al cambio dell option cambio qualcosa
