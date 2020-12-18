@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    console.log('ciao');
+    // console.log('ciao');
 
     const Handlebars = require("handlebars");
 
@@ -14,13 +14,13 @@ $(document).ready(function(){
         url: "../forAllDisc.php",
         method: "GET",
         success: function(data) {
-            console.log('ok');
-            console.log(data);
+            // console.log('ok');
+            // console.log(data);
 
             data.forEach((item, i) => {
-                console.log(item.title);
-                console.log(item.author);
-                console.log(item.year);
+                // console.log(item.title);
+                // console.log(item.author);
+                // console.log(item.year);
 
 //ora assegnamo alle chiavi che sono nel template dell'html {{chive}} il valore corrispondente e li salviamo in una variabile
                 var context = {
@@ -41,4 +41,27 @@ $(document).ready(function(){
             console.log('errore');
         }
     })
+
+    // al cambio dell option cambio qualcosa
+    // al cambio della option faccio una chiamata ajax
+
+    $('.genre-select').change(function() {
+
+        console.log($(this).val());
+        var curentGenre = $(this).val();
+
+        $.ajax({
+            url: "../forAllDisc.php",
+            method: 'GET',
+            data: {
+                'genre': curentGenre,
+            },
+            success: function(data){
+                console.log(data);
+            },
+            error: function(){
+                console.log('errore');
+            },
+        });
+    });
 });

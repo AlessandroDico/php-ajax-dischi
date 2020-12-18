@@ -5204,8 +5204,7 @@ module.exports = g;
 /***/ (function(module, exports, __webpack_require__) {
 
 $(document).ready(function () {
-  console.log('ciao');
-
+  // console.log('ciao');
   var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebars/dist/cjs/handlebars.js");
 
   var source = $("#entry-template").html(); //questa var template è una funzione
@@ -5217,13 +5216,13 @@ $(document).ready(function () {
     url: "../forAllDisc.php",
     method: "GET",
     success: function success(data) {
-      console.log('ok');
-      console.log(data);
+      // console.log('ok');
+      // console.log(data);
       data.forEach(function (item, i) {
-        console.log(item.title);
-        console.log(item.author);
-        console.log(item.year); //ora assegnamo alle chiavi che sono nel template dell'html {{chive}} il valore corrispondente e li salviamo in una variabile
-
+        // console.log(item.title);
+        // console.log(item.author);
+        // console.log(item.year);
+        //ora assegnamo alle chiavi che sono nel template dell'html {{chive}} il valore corrispondente e li salviamo in una variabile
         var context = {
           poster: item.poster,
           titolo: item.title,
@@ -5239,6 +5238,25 @@ $(document).ready(function () {
     error: function error() {
       console.log('errore');
     }
+  }); // al cambio dell option cambio qualcosa
+  // al cambio della option faccio una chiamata ajax
+
+  $('.genre-select').change(function () {
+    console.log($(this).val());
+    var curentGenre = $(this).val();
+    $.ajax({
+      url: "../forAllDisc.php",
+      method: 'GET',
+      data: {
+        'genre': curentGenre
+      },
+      success: function success(data) {
+        console.log(data);
+      },
+      error: function error() {
+        console.log('errore');
+      }
+    });
   });
 });
 
