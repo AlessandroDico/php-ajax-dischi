@@ -5242,6 +5242,8 @@ $(document).ready(function () {
   // al cambio della option faccio una chiamata ajax
 
   $('.genre-select').change(function () {
+    // svuoto il div con dentro le card prima di ripopolarlo
+    $('.card-container').empty();
     console.log($(this).val());
     var curentGenre = $(this).val();
     $.ajax({
@@ -5251,7 +5253,17 @@ $(document).ready(function () {
         'genre': curentGenre
       },
       success: function success(data) {
-        console.log(data);
+        // console.log(data);
+        data.forEach(function (item, i) {
+          var context = {
+            poster: item.poster,
+            titolo: item.title,
+            autore: item.author,
+            anno: item.year
+          };
+          var html = template(context);
+          $('.card-container').append(html);
+        });
       },
       error: function error() {
         console.log('errore');

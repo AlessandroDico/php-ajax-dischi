@@ -72,19 +72,35 @@ $dischi = [
     ]
 ];
 
+// $genre = '';
 
-$genre = $_GET['genre'];
-echo $genre;
+if (!empty($_GET) && !empty($_GET['genre'])) {
 
-if (!empty($_GET)) {
-    echo 'ciao';
-};
+    $genre = $_GET['genre'];
+    // se genre che arriva da Js è uguale al genre che ho nei dischi allora succede qualcosa
+    // se il genere è uguale pusho il disco in un array
+    // creo un nuovo array
+    $request_genre = [];
+    // per prendere il genere nei dischi devo fare un ciclo
+    foreach ($dischi as $disco) {
+        if ($genre == $disco['genre']) {
+            $request_genre[] = $disco;
+        }
+
+    }
+
+}
+else {
+    // gli do all'array che sto passando al js con echo json_encode il valore di dischi cosi prende tutti i dischi
+    $request_genre = $dischi;
+}
+
 
 if ( !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest' ) {
 
 
     header('Content-Type: application/json');
-    echo json_encode($dischi);
+    echo json_encode($request_genre);
 }
 
 ?>

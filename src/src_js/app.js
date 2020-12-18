@@ -42,10 +42,14 @@ $(document).ready(function(){
         }
     })
 
+
     // al cambio dell option cambio qualcosa
     // al cambio della option faccio una chiamata ajax
 
     $('.genre-select').change(function() {
+
+        // svuoto il div con dentro le card prima di ripopolarlo
+        $('.card-container').empty();
 
         console.log($(this).val());
         var curentGenre = $(this).val();
@@ -57,7 +61,22 @@ $(document).ready(function(){
                 'genre': curentGenre,
             },
             success: function(data){
-                console.log(data);
+                // console.log(data);
+                data.forEach((item, i) => {
+
+                    var context = {
+                        poster: item.poster,
+                        titolo: item.title,
+                        autore: item.author,
+                        anno: item.year
+                    };
+
+                    var html = template(context);
+
+
+                    $('.card-container').append(html);
+                });
+
             },
             error: function(){
                 console.log('errore');
