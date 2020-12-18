@@ -28,10 +28,10 @@ include '../forAllDisc.php';
             <div class="container">
                 <select class="genre-select">
                     <option value="">All Genres</option>
-                    <!-- <option value="Rock">Rock</option>
-                    <option value="Pop">Pop</option>
-                    <option value="Jazz">Jazz</option>
-                    <option value="Metal">Metal</option> -->
+                    <?php foreach ($arrayGenres as $genre) { ?>
+                        <option value="<?php echo $genre ?>"><?php echo $genre ?></option>
+                    <?php
+                    } ?>
                 </select>
                 <div class="card-container">
                     <?php foreach ($dischi as $disco) { ?>
@@ -49,6 +49,9 @@ include '../forAllDisc.php';
                 </div>
             </div>
         </main>
+
+<!-- script handlebars devo metterli altrimenti avendo linkato il file js con handlebars mi darebbe errore.. nonostante questi script non popolo il mio file con handlebars ma con php -->
+<!-- PS. se volessi popolare con handlebars il mio file dovrei dare al body l Id html-body in modo che entri nella prima if di JS -->
         <script id="entry-template" type="text/x-handlebars-template">
                 <div class="box-card">
                     <div class="card-image-container">

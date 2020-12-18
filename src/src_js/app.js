@@ -21,15 +21,10 @@ $(document).ready(function(){
             url: "../forAllDisc.php",
             method: "GET",
             success: function(data) {
-                // console.log('ok');
-                // console.log(data);
 
                 var genreArray = [];
 
                 data.forEach((item, i) => {
-                    // console.log(item.title);
-                    // console.log(item.author);
-                    // console.log(item.year);
 
                     //ora assegnamo alle chiavi che sono nel template dell'html {{chive}} il valore corrispondente e li salviamo in una variabile
                     var context = {

@@ -72,7 +72,7 @@ $dischi = [
     ]
 ];
 
-
+ 
 $arrayGenres = [];
 foreach ($dischi as $disco) {
 
@@ -81,7 +81,8 @@ foreach ($dischi as $disco) {
     }
 };
 
-var_dump($arrayGenres);
+// var_dump($arrayGenres);
+// exit;
 // $genre = '';
 
 if (!empty($_GET) && !empty($_GET['genre'])) {
