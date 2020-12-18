@@ -11,6 +11,7 @@ include '../forAllDisc.php';
         <!-- google fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw==" crossorigin="anonymous"></script>
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
@@ -27,10 +28,10 @@ include '../forAllDisc.php';
             <div class="container">
                 <select class="genre-select">
                     <option value="">All Genres</option>
-                    <option value="Rock">Rock</option>
+                    <!-- <option value="Rock">Rock</option>
                     <option value="Pop">Pop</option>
                     <option value="Jazz">Jazz</option>
-                    <option value="Metal">Metal</option>
+                    <option value="Metal">Metal</option> -->
                 </select>
                 <div class="card-container">
                     <?php foreach ($dischi as $disco) { ?>
@@ -57,6 +58,9 @@ include '../forAllDisc.php';
                     <p>{{autore}}</p>
                     <p>{{anno}}</p>
                 </div>
+        </script>
+        <script id="select-template" type="text/x-handlebars-template">
+            <option value="{{genre}}">{{genre}}</option>
         </script>
         <script src="../public/ajax/app.js" charset="utf-8"></script>
     </body>

@@ -5209,7 +5209,7 @@ $(document).ready(function () {
 
   var source = $("#entry-template").html(); //questa var template è una funzione
 
-  var template = Handlebars.compile(source); //template per le select / options 
+  var template = Handlebars.compile(source); //template per le select / options
 
   var secondSource = $("#select-template").html();
   var secondTemplate = Handlebars.compile(secondSource); // chiamata ajax

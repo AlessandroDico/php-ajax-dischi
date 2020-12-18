@@ -72,6 +72,16 @@ $dischi = [
     ]
 ];
 
+
+$arrayGenres = [];
+foreach ($dischi as $disco) {
+
+    if (!in_array($disco['genre'], $arrayGenres)) {
+        $arrayGenres[] = $disco['genre'];
+    }
+};
+
+var_dump($arrayGenres);
 // $genre = '';
 
 if (!empty($_GET) && !empty($_GET['genre'])) {
@@ -90,6 +100,7 @@ if (!empty($_GET) && !empty($_GET['genre'])) {
     }
 
 }
+
 else {
     // gli do all'array che sto passando al js con echo json_encode il valore di dischi cosi prende tutti i dischi
     $request_genre = $dischi;

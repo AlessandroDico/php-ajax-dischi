@@ -8,7 +8,7 @@ $(document).ready(function(){
     //questa var template è una funzione
     var template = Handlebars.compile(source);
 
-//template per le select / options 
+//template per le select / options
     var secondSource = $("#select-template").html();
 
     var secondTemplate = Handlebars.compile(secondSource);
@@ -62,6 +62,7 @@ $(document).ready(function(){
                     $('.genre-select').append(selectHtml);
 
                 });
+
 
             },
             error: function() {
