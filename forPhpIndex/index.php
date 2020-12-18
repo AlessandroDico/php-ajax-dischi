@@ -1,5 +1,5 @@
 <?php
-include 'dischi.php';
+include '../forAllDisc.php';
 // var_dump($dischi);
 ?>
 <!DOCTYPE html>

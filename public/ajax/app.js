@@ -5214,7 +5214,7 @@ $(document).ready(function () {
 
   $.ajax({
     // url: "../forAjaXIndex/disc.php",
-    url: "disc.php",
+    url: "../forAllDisc.php",
     method: "GET",
     success: function success(data) {
       console.log('ok');
